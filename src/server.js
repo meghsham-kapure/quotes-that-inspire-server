@@ -10,9 +10,9 @@ dotenv.config({ path: "./.env" });
 const expressApp = express();
 expressApp.use(
   cors({
-    origin: "*",
+    origin: "https://quotes-that-inspire-client.vercel.app",
     methods: ["GET"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type"],
   }),
 );
 
