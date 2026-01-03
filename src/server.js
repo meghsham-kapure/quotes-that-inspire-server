@@ -8,7 +8,13 @@ import { quotes } from "./db/quotes-db.js";
 dotenv.config({ path: "./.env" });
 
 const expressApp = express();
-expressApp.use(cors());
+expressApp.use(
+  cors({
+    origin: "*",
+    methods: ["GET"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
 
 expressApp.listen(process.env.APP_PORT, () => {
   console.log(`\nHey, ${process.env.APP_NAME} backend started listning on ${process.env.APP_PORT}
